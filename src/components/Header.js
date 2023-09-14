@@ -1,6 +1,6 @@
 import React from "react"
 import SearchIcon from "@mui/icons-material/Search";
-import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import "../styles/Header.css"
 
 
@@ -37,9 +37,9 @@ function Header() {
                 <span className="header__optionLineTwo">Prime</span>
             </div>
 
-            <div className="header__optionBasket">
-                <ShoppingBasketIcon />
-                <span className="header__optionLineTwo header__basketCount">0</span>
+            <div className="header__optionCart">
+                <ShoppingCartIcon />
+                <span className="header__optionLineTwo header__cartCount">0</span>
             </div>
         </div>
     </div>

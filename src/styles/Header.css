@@ -58,13 +58,13 @@
     font-weight: 800;
 }
 
-.header__optionBasket {
+.header__optionCart {
     display: flex;
     align-items: center;
     color: white;
 }
 
-.header__basketCount {
+.header__cartCount {
     margin-left: 10px;
     margin-right: 10px;
 }
