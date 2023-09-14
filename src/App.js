@@ -1,14 +1,37 @@
 import './App.css';
 import Header from './components/Header';
 import Home from './components/Home';
+import Checkout from './components/Checkout';
+import {BrowserRouter as Router, Routes, Route} from "react-router-dom"
 
 function App() {
   // BEM
   return (
-    <div className="App">
+    <Router>
+      <div className="app">
       <Header />
-      <Home />
-    </div>
+        <Routes>
+          <Route
+            path="/checkout"
+            element={
+            <>
+              <Checkout />
+            </>
+            }
+          >
+          </Route>
+          <Route
+            exact path="*"
+            element={
+            <>
+              <Home />
+            </>
+          }
+          >
+          </Route>
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
