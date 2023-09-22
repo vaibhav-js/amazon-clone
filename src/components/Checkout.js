@@ -13,12 +13,11 @@ function Checkout() {
             />
 
             <div className='checkout__title'>
-                <h1>Your shopping cart</h1>
+                <h1>Your Cart</h1>
             </div>
         </div>
 
         <div className='checkout__right'>
-            <h2>You cart value is</h2>
             <Subtotal />
         </div>
     </div>
