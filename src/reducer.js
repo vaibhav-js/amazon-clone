@@ -44,6 +44,12 @@ const reducer = (state, action) => {
                 console.warn(`Can't remove product (id: ${action.item.id}) as it is not in cart!`)
                 return state
             }
+
+        case "SET_USER":
+            return {
+                ...state,
+                user: action.user
+            }
             
         default:
             return state;
