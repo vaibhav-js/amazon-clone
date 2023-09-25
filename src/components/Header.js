@@ -5,10 +5,17 @@ import "../styles/Header.css"
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
 import { getCartTotalItems } from '../reducer'
+import { auth } from "../config/firebase";
 
 
 function Header() {
-    const [{ cart }] = useStateValue();
+    const [{ cart, user }] = useStateValue();
+
+    const handleAuthentication = () => {
+        if (user) {
+            auth.signOut();
+        }    
+    }
     
   return (
     <div className="header">
@@ -30,9 +37,9 @@ function Header() {
 
         <div className="header__nav">
             <Link to='/login'>
-                <div className="header__option">
+                <div onClick={handleAuthentication} className="header__option">
                     <span className="header__optionLineOne">Hello, </span>
-                    <span className="header__optionLineTwo">Sign in</span>
+                    <span className="header__optionLineTwo">{user ? "Sign out": "Sign in"}</span>
                 </div>
             </Link>
 
