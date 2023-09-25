@@ -17,7 +17,7 @@ function Checkout() {
             />
 
             <div className='checkout__title'>
-                <h1>Your Cart</h1>
+                <h1>Shopping Cart</h1>
 
                 {cart.map(item => (
                     <CartItemCheckout
@@ -26,6 +26,7 @@ function Checkout() {
                         title={item.title}
                         price={item.price}
                         rating={item.rating}
+                        quantity={item.quantity}
                     />
                 ))}
             </div>
