@@ -4,6 +4,7 @@ import ShoppingCartIcon from '@mui/icons-material/ShoppingCart';
 import "../styles/Header.css"
 import { Link } from "react-router-dom";
 import { useStateValue } from "./StateProvider";
+import { getCartTotalItems } from '../reducer'
 
 
 function Header() {
@@ -28,10 +29,12 @@ function Header() {
         </div>
 
         <div className="header__nav">
-            <div className="header__option">
-                <span className="header__optionLineOne">Hello, </span>
-                <span className="header__optionLineTwo">Sign in</span>
-            </div>
+            <Link to='/login'>
+                <div className="header__option">
+                    <span className="header__optionLineOne">Hello, </span>
+                    <span className="header__optionLineTwo">Sign in</span>
+                </div>
+            </Link>
 
             <div className="header__option">
                 <span className="header__optionLineOne">Orders</span>
@@ -46,7 +49,7 @@ function Header() {
             <Link to='/checkout'>
                 <div className="header__optionCart">
                     <ShoppingCartIcon />
-                    <span className="header__optionLineTwo header__cartCount">{cart?.length}</span>
+                    <span className="header__optionLineTwo header__cartCount">{getCartTotalItems(cart)}</span>
                 </div>
             </Link>
         </div>
