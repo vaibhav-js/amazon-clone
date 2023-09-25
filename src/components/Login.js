@@ -14,7 +14,6 @@ function Login() {
         e.preventDefault()
 
         signInWithEmailAndPassword(auth, email, password).then(userCredentials => {
-            console.log(userCredentials)
             navigate('/')
         }).catch(error => alert(error.message))
     }
@@ -23,7 +22,6 @@ function Login() {
         e.preventDefault()
 
         createUserWithEmailAndPassword(auth, email, password).then((userCredentials) => {
-            console.log(userCredentials)
             if (userCredentials) {
                 navigate('/');
             }
