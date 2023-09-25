@@ -4,7 +4,8 @@ import { useStateValue } from './StateProvider'
 
 
 function CartItemCheckout({ id, image, title, price, rating, quantity}) {
-    const [{ cart }, dispatch] = useStateValue();
+    // eslint-disable-next-line
+    const [{}, dispatch] = useStateValue();
 
     const removeFromCart = () => {
 
