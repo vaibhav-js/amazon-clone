@@ -1,32 +1,50 @@
 export const initialState = {
-    cart: []
+    cart: [],
+    user: null
 };
 
-export const getCartTotal = (cart) => cart?.reduce((amount, item) => item.price + amount, 0);
+export const getCartTotalAmount = (cart) => cart?.reduce((amount, item) => (item.price * item.quantity) + amount, 0);
+export const getCartTotalItems = (cart) => cart?.reduce((total, item) => item.quantity + total, 0);
 
 const reducer = (state, action) => {
     switch(action.type) {
         case "ADD_TO_CART":
-            return {
-                ...state,
-                cart: [...state.cart, action.item]
-            };
+            const existingItem = state.cart.find((cartItem) => cartItem.id === action.item.id);
+            if (existingItem) {
+                const updatedCart = state.cart.map((item) => item.id === action.item.id ? {...item, quantity: item.quantity + 1} : item)
+                return {
+                    ...state,
+                    cart: updatedCart
+                }
+            } else {
+                const newItem = {...action.item, quantity: 1};
+                return {
+                    ...state,
+                    cart: [...state.cart, newItem]
+                };
+            }
 
         case "REMOVE_FROM_CART":
-            const index = state.cart.findIndex((cartItem) => cartItem.id === action.item.id);
-            let newCart = [...state.cart];
-
-            if (index >= 0) {
-                newCart.splice(index, 1);
+            const cartItem = state.cart.find((item) => item.id === action.item.id);
+            if (cartItem) {
+                if (cartItem.quantity === 1) {
+                    const updatedCart = state.cart.filter((item) => item.id !== action.item.id);
+                    return {
+                        ...state,
+                        cart: updatedCart
+                    }
+                } else {
+                    const updatedCart = state.cart.map((item) => item.id === action.item.id ? { ...item, quantity: item.quantity - 1 } : item);
+                    return {
+                        ...state,
+                        cart: updatedCart
+                    }
+                }
             } else {
-                console.warn(
-                    `Can't remove product (id: ${action.id}) as it is not in cart!`
-                )
+                console.warn(`Can't remove product (id: ${action.item.id}) as it is not in cart!`)
+                return state
             }
-            return {
-                ...state,
-                cart: newCart
-            }
+            
         default:
             return state;
     }
