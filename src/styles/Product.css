@@ -33,9 +33,28 @@
 }
 
 .product > button {
-    background: #f0c14b;
+    background: #ffd814;
     border: 1px solid;
     margin-top: 10px;
-    border-color: #a88734 #9c7e31 #846a29;
+    border-color: #fcd200;
     color: #111;
+    border-radius: 8px;
+    padding: 10px;
+}
+
+.product > button:hover {
+    background: #f7ca00;
+    border-color: #f2c200;
+    cursor: pointer;
+}
+
+.product > button:focus {
+    border-color: #008296;
+    box-shadow: 0 0 0 3px #c8f3fa, inset 0 0 0 2px #fff;
+}
+
+.product > button:active {
+    background: #f0b800;
+    border-color: #008296;
+    box-shadow: 0 0 0 3px #c8f3fa, inset 0 0 0 2px #fff;
 }
