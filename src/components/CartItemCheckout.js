@@ -42,7 +42,7 @@ function CartItemCheckout({ id, image, title, price, rating, quantity}) {
                 ))}
             </div>
             <div>
-                <p>Quantity: {quantity}</p>
+                <p><strong>Quantity: {quantity}</strong></p>
             </div>
             <button onClick={removeFromCart}>Remove from Cart</button>
         </div>
