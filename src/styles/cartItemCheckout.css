@@ -2,12 +2,20 @@
     display: flex;
     margin-top: 20px;
     margin-bottom: 20px;
+    border-bottom: 1px ridge lightgray;
+    transition: 200ms ease-in-out;
+}
+
+.cartItemCheckout:hover {
+    box-shadow: 5px 5px 10px lightgray;
+    transform: scale(1.01);
 }
 
 .cartItemCheckout > img {
     object-fit: contain;
     width: 180px;
     height: 180px;
+    margin-bottom: 20px;
 }
 
 .cartItemCheckout__info {
