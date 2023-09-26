@@ -10,6 +10,12 @@
     min-width: 100px;
     background-color: white;
     z-index: 1;
+    transition: 100ms ease-in-out;
+}
+
+.product:hover {
+    box-shadow: 10px 10px 10px rgba(28, 11, 11, 0.379);
+    transform: scale(1.02);
 }
 
 .product__info {
