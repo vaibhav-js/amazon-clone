@@ -45,6 +45,12 @@ const reducer = (state, action) => {
                 return state
             }
 
+        case "EMPTY_CART":
+            return {
+                ...state,
+                cart: []
+            }
+
         case "SET_USER":
             return {
                 ...state,
