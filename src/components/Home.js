@@ -1,15 +1,44 @@
 import React from "react"
 import "../styles/Home.css"
 import Product from "./Product"
+import { Carousel } from "react-responsive-carousel"
+import "react-responsive-carousel/lib/styles/carousel.min.css";
 
 function Home() {
   return (
     <div className="home">
         <div className="home__container">
-            <img
-            className="home__image"
-            src="https://images-eu.ssl-images-amazon.com/images/G/31/prime/S2S/Homepage_DesktopHeroTemplate_1500x600._CB587504363_.jpg"
-            alt=""/>
+            <Carousel
+                showArrows={true}
+                autoPlay={true}
+                infiniteLoop={true}
+                showThumbs={false}
+                stopOnHover={false}
+                interval={5000}
+                showStatus={false}
+                className="home__image">
+                <div>
+                    <img
+                        
+                        src="https://images-eu.ssl-images-amazon.com/images/G/31/prime/S2S/Homepage_DesktopHeroTemplate_1500x600._CB587504363_.jpg"
+                        alt=""
+                    />
+                </div>
+                <div>
+                    <img
+                        
+                        src="https://images-eu.ssl-images-amazon.com/images/G/31/img19/AmazonPay/Kartik/BRANDCAMPAIGN/PC/XCM-Sep-PC_Hero_3000x1200._CB578347354_.jpg"
+                        alt=""
+                    />
+                </div>
+                <div>
+                    <img
+                        
+                        src="https://images-eu.ssl-images-amazon.com/images/G/31/img21/Wireless/Madhav/september/itelP55/tecnophantom/D97180317_INWLD_Tecno_PhantomV_FlipV5G_DesktopTallHero_3000x1200._CB578697544_.jpg"
+                        alt=""
+                    />
+                </div>
+            </Carousel>
 
             <div className="home__row">
                 <Product
