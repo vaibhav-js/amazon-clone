@@ -1,10 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import '../styles/Subtotal.css'
 import CurrencyFormat from 'react-currency-format'
 import { useStateValue } from './StateProvider'
 import { getCartTotalAmount, getCartTotalItems } from '../reducer'
 import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+
 
 function Subtotal() {
     const [{ cart }] = useStateValue();
