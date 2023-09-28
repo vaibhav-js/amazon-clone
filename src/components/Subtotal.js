@@ -4,13 +4,19 @@ import CurrencyFormat from 'react-currency-format'
 import { useStateValue } from './StateProvider'
 import { getCartTotalAmount, getCartTotalItems } from '../reducer'
 import { useNavigate } from 'react-router-dom'
+import { useState } from 'react'
 
 function Subtotal() {
     const [{ cart }] = useStateValue();
+    const [disabled, setDisabled] = useState(false)
     const navigate = useNavigate();
 
+
     const navigateToPayment = () => {
-        navigate('/payment')
+        if (cart?.length) {
+            setDisabled(true);
+            navigate('/payment')
+        }
     }
 
   return (
@@ -33,7 +39,7 @@ function Subtotal() {
             thousandSeparator={true}
             prefix='₹'
         />
-        <button onClick={navigateToPayment}>Proceed to Buy</button>
+        <button onClick={navigateToPayment} disabled={disabled}>Proceed to Buy</button>
     </div>
   )
 }
