@@ -7,7 +7,7 @@ import { collection, query, orderBy, getDocs, doc } from "firebase/firestore";
 
 function Orders() {
     const [orders, setOrders] = useState([])
-    const [{ user, cart }, dispatch] = useStateValue()
+    const [{ user}] = useStateValue()
 
     useEffect(() => {
         if (user) {
