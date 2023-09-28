@@ -24,7 +24,6 @@ function Orders() {
                     data: doc.data()
                 })));
                 
-                console.log(q)
             }
             getOrdersForUser();
         } else {

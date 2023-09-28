@@ -39,8 +39,6 @@ function Payment() {
 
     }, [cart])
 
-    console.log('the secret is', clientSecret)
-
 
     const stripe = useStripe();
     const elements = useElements();
@@ -54,7 +52,6 @@ function Payment() {
                 card: elements.getElement(CardElement)
             }
         }).then(async ({ paymentIntent }) => {
-            console.log(paymentIntent)
 
             const data = {
                 cart: cart,
