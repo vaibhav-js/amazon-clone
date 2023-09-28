@@ -35,7 +35,7 @@
     padding-bottom: 20px;
 }
 
-.payment__details form > div > button {
+.payment__details > form > div > button {
     background: #ffd814;
     border: 1px solid;
     margin-top: 10px;
@@ -46,19 +46,26 @@
     width: 50%;
 }
 
-.payment__details form > div > button:hover {
+.payment__details > form > div > button:hover {
     background: #f7ca00;
     border-color: #f2c200;
     cursor: pointer;
 }
 
-.payment__details form > div > button:focus {
+.payment__details > form > div > button:focus {
     border-color: #008296;
     box-shadow: 0 0 0 3px #c8f3fa, inset 0 0 0 2px #fff;
 }
 
-.payment__details form > div > button:active {
+.payment__details > form > div > button:active {
     background: #f0b800;
     border-color: #008296;
     box-shadow: 0 0 0 3px #c8f3fa, inset 0 0 0 2px #fff;
+}
+
+.payment__details > form > div > button:disabled {
+    cursor: not-allowed;
+    background-color: #ccc;
+    border: none;
+    opacity: 0.6;
 }
