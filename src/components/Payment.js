@@ -25,7 +25,9 @@ function Payment() {
 
         const getClientSecret = async () => {
             const cartTotalAmount = getCartTotalAmount(cart)
-            if (cartTotalAmount) {
+            if (!cartTotalAmount) {
+                setDisabled(true)
+            } else {
                 const response = await axios({
                     method: 'post',
                     // Stripe expects the total in a currencies subunit
